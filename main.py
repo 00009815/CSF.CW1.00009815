@@ -54,6 +54,9 @@ class_b_seats = dict()                          # similar procedure for the clas
 for seat, std_id in enumerate(class_b_ids, 1):
     class_b_seats[seat] = std_id
 
+collaboration_list = list(zip(class_a_ids, class_b_ids))  # zip function is used to combine two ID lists and make pairs
+                                                          # for a collaboration work
+
 print("Class A: ")
 print(class_a)
 print("Class B: ")
