@@ -7,6 +7,14 @@ def data_addition(key, value):  # function gets parameters from user input and p
     class_b[key] = value
 
 
+def similarity_check(first, second):  # function gets two ID lists as parameters
+    for i in range(len(first)):
+        for j in range(len(second)):
+            if first[i] == second[j]:       # Both lists have 3 elements and are sorted, the identical elements will be
+                return True
+    return False
+
+
 class_a = {             # the data about student names and IDs is separated in two classes
     "Mike": "153",      # and stored in dictionaries for better readability
     "John": "684",
@@ -32,6 +40,11 @@ for name, ids in class_b.items():          # similar procedure is done with the 
     class_b_ids.append(ids)
 class_b_ids.sort()
 
+if similarity_check(class_a_ids, class_b_ids):      # check if there are identical IDs in different classes
+    print("There are the same IDs in two classes")  # warning if there are identical IDs
+else:
+    class_a_ids = tuple(class_a_ids)  # if there are no identical IDs, the ID lists are turned into immutable tuples
+    class_b_ids = tuple(class_b_ids)  # to prevent accidental changes
 
 print("Class A: ")
 print(class_a)
