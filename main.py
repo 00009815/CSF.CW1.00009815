@@ -46,6 +46,14 @@ else:
     class_a_ids = tuple(class_a_ids)  # if there are no identical IDs, the ID lists are turned into immutable tuples
     class_b_ids = tuple(class_b_ids)  # to prevent accidental changes
 
+class_a_seats = dict()                          # a dictionary to contain student's seats and IDs in the class a
+for seat, std_id in enumerate(class_a_ids, 1):  # enumerate function is used to attach counter from 1 to 3 to sorted IDs
+    class_a_seats[seat] = std_id
+
+class_b_seats = dict()                          # similar procedure for the class b
+for seat, std_id in enumerate(class_b_ids, 1):
+    class_b_seats[seat] = std_id
+
 print("Class A: ")
 print(class_a)
 print("Class B: ")
